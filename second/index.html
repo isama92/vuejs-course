@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../node_modules/font-awesome/css/font-awesome.min.css">
+
+    <title>Vue Second</title>
+</head>
+<body style="height:100vh;">
+
+    <div id="app" class="container-fluid h-100" v-on:mousemove="updateMouseCoords">
+
+        <div class="container pt-5">
+
+            <!-- Counter Begin -->
+            <div class="row mb-5 text-center">
+                <div class="col-12">
+                    <h4>Counter</h4>
+                </div>
+
+                <div class="col-12 h3">{{ count }}</div>
+
+                <div class="col-4 col-sm-2 offset-sm-2 col-md-2 offset-md-2 col-xl-1 offset-xl-4">
+                    <button v-on:click="decrement($event, 5)" class="btn btn-danger btn-sm">
+                        <i class="fa fa-minus"></i> <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <div class="col-2 col-sm-2 col-md-2 col-xl-1">
+                    <button v-on:click="decrement" class="btn btn-danger btn-sm">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+
+                <div class="col-2 col-sm-2 col-md-2 col-xl-1">
+                    <button v-on:click="increment" class="btn btn-success btn-sm">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="col-4 col-sm-2 col-md-2 col-xl-1">
+                    <button v-on:click="increment($event, 5)" class="btn btn-success btn-sm">
+                        <i class="fa fa-plus"></i> <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Counter End -->
+
+            <!-- Mouse Coordinates Begin -->
+            <div class="row mb-5 text-center">
+                <div class="col-12">
+                    <h4>Mouse Coordinates</h4>
+                    <span>x: {{ coords.x }} / y: {{ coords.y }}</span>
+                </div>
+                <div class="col-12 mt-2 alert alert-primary" v-on:mousemove.stop>
+                    Mouse coordinates dead spot
+                </div>
+            </div>
+            <!-- Mouse Coordinates End -->
+
+            <!-- Mouse Coordinates Begin -->
+            <div class="row text-center">
+                <div class="col-12">
+                    <h4>Stopwatch</h4>
+                </div>
+
+                <div class="col-12 h3">{{ getStopwatch() }}</div>
+
+                <div class="col-12">
+                    <button class="btn btn-success" v-if="stopwatchInterval === null" v-on:click="startStopwatch">Start</button>
+                    <button class="btn btn-danger" v-if="stopwatchInterval !== null" v-on:click="stopStopwatch">Stop</button>
+                    <button class="btn btn-warning" v-if="stopwatch !== 0" v-on:click="resetStopwatch">Reset</button>
+                </div>
+            </div>
+            <!-- Mouse Coordinates End -->
+
+        </div>
+
+    </div>
+
+    <script src="./../node_modules/vue/dist/vue.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>

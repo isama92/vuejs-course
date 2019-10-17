@@ -1,12 +1,12 @@
 {
-  "name": "vuejs-first",
+  "name": "vuejs-course",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "VueJS 2 Exercises",
   "author": "isama92",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "font-awesome": "^4.7.0",
     "vue": "^2.6.10"
   }
 }
