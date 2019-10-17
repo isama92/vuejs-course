@@ -1,0 +1,12 @@
+{
+  "name": "vuejs-first",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "author": "isama92",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "vue": "^2.6.10"
+  }
+}
