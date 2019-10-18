@@ -52,20 +52,20 @@ new Vue({
 
         startStopwatch: function() {
             if(this.stopwatchInterval === null) {
-                this.stopwatchInterval = window.setInterval(() => {
+                this.stopwatchInterval = setInterval(() => {
                     this.stopwatch += 0.01;
                 }, 10);
             }
         },
         stopStopwatch: function() {
             if(this.stopwatchInterval !== null) {
-                window.clearInterval(this.stopwatchInterval);
+                clearInterval(this.stopwatchInterval);
                 this.stopwatchInterval = null;
             }
         },
         resetStopwatch: function() {
             if(this.stopwatchInterval !== null) {
-                window.clearInterval(this.stopwatchInterval);
+                clearInterval(this.stopwatchInterval);
                 this.stopwatchInterval = null;
             }
             this.stopwatch = 0;
