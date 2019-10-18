@@ -4,6 +4,7 @@ new Vue({
     el: '#app',
     data: {
         count: 0,
+        oldCount: 0,
 
         coords: {
             x: null,
@@ -19,6 +20,20 @@ new Vue({
                 ? this.stopwatch.toFixed(2)
                 : this.stopwatch;
             },
+    },
+    watch: {
+        count: function(v) {
+            const stopwatch_started = this.stopwatchInterval === null;
+            const old = this.oldCount;
+            this.oldCount = v;
+            if(v > 0 && v < 100 && v > old && stopwatch_started) {
+                this.startStopwatch();
+            } else if(v === 100) {
+                this.stopStopwatch();
+            } else if(v === 0 || v < old) {
+                this.resetStopwatch();
+            }
+        },
     },
     methods: {
         increment: function(e, step = 1) {
