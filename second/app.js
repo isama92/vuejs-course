@@ -13,6 +13,13 @@ new Vue({
         stopwatchInterval: null,
         stopwatch: 0,
     },
+    computed: {
+        stopwatch_label: function() {
+            return this.stopwatch !== 0
+                ? this.stopwatch.toFixed(2)
+                : this.stopwatch;
+            },
+    },
     methods: {
         increment: function(e, step = 1) {
             const count = this.count + step;
@@ -47,10 +54,6 @@ new Vue({
                 this.stopwatchInterval = null;
             }
             this.stopwatch = 0;
-        },
-
-        getStopwatch: function() {
-            return this.stopwatch !== 0? this.stopwatch.toFixed(2) : this.stopwatch;
         },
     },
 });
