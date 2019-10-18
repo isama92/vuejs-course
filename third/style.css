@@ -1,0 +1,31 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #EEE;
+    margin: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    border-radius: 7px;
+    user-select: none;
+    transition: background-color .3s ease-in-out;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.green {
+    background-color: #3B8054;
+}
+
+.white {
+    background-color: #FFF;
+}
+
+.red {
+    background-color: #FF4943;
+}
+
+.blue {
+    background-color: #3056FF;
+}
