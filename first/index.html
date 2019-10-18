@@ -18,14 +18,14 @@
 
         <div class="row">
             <div class="col">
-                <input type="text" class="form-control" v-on:input="updateStr">
+                <input type="text" class="form-control" @input="updateStr">
                 <p v-html="str"></p>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <a v-bind:href="getLink()" target="_blank">Go to Google.com</a>
+                <a :href="getLink()" target="_blank">Go to Google.com</a>
             </div>
         </div>
 

@@ -14,7 +14,7 @@
 </head>
 <body style="height:100vh;">
 
-    <div id="app" class="container-fluid h-100" v-on:mousemove="updateMouseCoords">
+    <div id="app" class="container-fluid h-100" @mousemove="updateMouseCoords">
 
         <div class="container pt-5">
 
@@ -27,24 +27,24 @@
                 <div class="col-12 h3">{{ count }}</div>
 
                 <div class="col-4 col-sm-2 offset-sm-2 col-md-2 offset-md-2 col-xl-1 offset-xl-4">
-                    <button v-on:click="decrement($event, 5)" class="btn btn-danger btn-sm">
+                    <button @click="decrement($event, 5)" class="btn btn-danger btn-sm">
                         <i class="fa fa-minus"></i> <i class="fa fa-minus"></i>
                     </button>
                 </div>
                 <div class="col-2 col-sm-2 col-md-2 col-xl-1">
-                    <button v-on:click="decrement" class="btn btn-danger btn-sm">
+                    <button @click="decrement" class="btn btn-danger btn-sm">
                         <i class="fa fa-minus"></i>
                     </button>
                 </div>
 
                 <div class="col-2 col-sm-2 col-md-2 col-xl-1">
-                    <button v-on:click="increment" class="btn btn-success btn-sm">
+                    <button @click="increment" class="btn btn-success btn-sm">
                         <i class="fa fa-plus"></i>
                     </button>
                 </div>
 
                 <div class="col-4 col-sm-2 col-md-2 col-xl-1">
-                    <button v-on:click="increment($event, 5)" class="btn btn-success btn-sm">
+                    <button @click="increment($event, 5)" class="btn btn-success btn-sm">
                         <i class="fa fa-plus"></i> <i class="fa fa-plus"></i>
                     </button>
                 </div>
@@ -57,7 +57,7 @@
                     <h4>Mouse Coordinates</h4>
                     <span>x: {{ coords.x }} / y: {{ coords.y }}</span>
                 </div>
-                <div class="col-12 mt-2 alert alert-primary" v-on:mousemove.stop>
+                <div class="col-12 mt-2 alert alert-primary" @mousemove.stop>
                     Mouse coordinates dead spot
                 </div>
             </div>
@@ -72,9 +72,9 @@
                 <div class="col-12 h3">{{ stopwatch_label }}</div>
 
                 <div class="col-12">
-                    <button class="btn btn-success" v-if="stopwatchInterval === null" v-on:click="startStopwatch">Start</button>
-                    <button class="btn btn-danger" v-if="stopwatchInterval !== null" v-on:click="stopStopwatch">Stop</button>
-                    <button class="btn btn-warning" v-if="stopwatch !== 0" v-on:click="resetStopwatch">Reset</button>
+                    <button class="btn btn-success" v-if="stopwatchInterval === null" @click="startStopwatch">Start</button>
+                    <button class="btn btn-danger" v-if="stopwatchInterval !== null" @click="stopStopwatch">Stop</button>
+                    <button class="btn btn-warning" v-if="stopwatch !== 0" @click="resetStopwatch">Reset</button>
                 </div>
             </div>
             <!-- Mouse Coordinates End -->
