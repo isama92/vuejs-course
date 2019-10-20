@@ -42,7 +42,7 @@
         <div>
             <input type="text" v-model="selectClass2">
             <input type="text" v-model="classOnOff">
-            <div :class="ex4">4</div>
+            <div :class="[{shrink: classOnOff === 'true'}, selectClass2]">4</div>
         </div>
         <br><br>
 

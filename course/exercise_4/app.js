@@ -18,12 +18,6 @@ new Vue({
                 shrink: !this.effectBool,
             };
         },
-        ex4: function() {
-            return {
-                [this.selectClass2]: true,
-                shrink: this.classOnOff === 'true',
-            };
-        },
         progressPerc: function() {
             // x : 100 = progress : maxprog
             return Math.ceil(this.progress * 100 / this.maxProgress);
